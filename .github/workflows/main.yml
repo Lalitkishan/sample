@@ -45,6 +45,7 @@ jobs:
           azcliversion: latest
           inlineScript: |
             az account show
+            az account set --subscription f74be4c1-1825-4911-a360-a1b108e5f285
       - run: |
           az webapp list --query "[?state=='Running']" 
       - name: Deployment
