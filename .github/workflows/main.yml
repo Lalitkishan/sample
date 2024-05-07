@@ -33,6 +33,8 @@ jobs:
         
       - name: Publish
         run: dotnet publish ./CurrentTimeService.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
+      - name: azure login
+        run: az login
       - name: 'az cli login'
         uses: azure/login@v2
         with:
